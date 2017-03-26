@@ -22,7 +22,7 @@
     <script src="https://use.fontawesome.com/ef1792dc46.js"></script>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top all-navs">
         <div class="container">
             <div class="navbar-header">
 
@@ -35,7 +35,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
+                <a id="nav-brand" class="navbar-brand" href="{{ url('/home') }}">
                     <i class="fa fa-book" aria-hidden="true" style="margin-right: 5px;"></i>Fredbooks
                 </a>
             </div>
@@ -47,7 +47,7 @@
                 {{--</ul>--}}
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
+                <ul id="nav-right" class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
                         <li><a href="{{ url('/login') }}">Login</a></li>

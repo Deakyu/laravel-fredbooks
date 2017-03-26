@@ -7,3 +7,15 @@
 .bigwords {
     font-size: 3rem;
 }
+
+select {
+    text-align-last: center;
+}
+
+/*.all-navs {*/
+    /*background-color: rgba(0,56,168,1);*/
+/*}*/
+
+/*#nav-brand, #nav-right a {*/
+    /*color: white;*/
+/*}*/

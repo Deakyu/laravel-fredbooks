@@ -38,6 +38,42 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('major') ? ' has-error' : '' }}">
+                            <label for="major" class="col-md-4 control-label">Major</label>
+
+                            <div class="col-md-6">
+                                <input id="major" type="text" class="form-control" name="major" value="{{ old('major') }}">
+
+                                @if ($errors->has('major'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('major') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('standing') ? ' has-error' : '' }}">
+                            <label for="standing" class="col-md-4 control-label">Standing</label>
+
+                            <div class="col-md-6">
+                                <select name="standing" id="standing" class="form-control">
+                                    <option disabled selected value>Choose your year in school</option>
+                                    <option>Freshman</option>
+                                    <option>Sophomore</option>
+                                    <option>Junior</option>
+                                    <option>Senior</option>
+                                    <option>Graduate</option>
+                                    <option value="Normal">None of the Above</option>
+                                </select>
+
+                                @if ($errors->has('standing'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('standing') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
                             <label for="password" class="col-md-4 control-label">Password</label>
 
