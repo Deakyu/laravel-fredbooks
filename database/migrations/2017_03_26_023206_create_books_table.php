@@ -20,6 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('author');
             $table->float('desirable_price')->nullable();
             $table->integer('status')->unsigned();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

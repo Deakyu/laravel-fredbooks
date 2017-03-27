@@ -47,7 +47,13 @@
 
                             <div class="form-group">
                                 {!! Form::label('photo', 'Photo:', ['class'=>'col-sm-4 control-label']) !!}
-                                <div class="col-sm-6">{!! Form::file('photo') !!}</div>
+                                <div class="col-sm-6">{!! Form::file('photo', ['onchange'=>'previewFile()', "class"=>"image-padding-top"]) !!}</div>
+                            </div>
+
+                            <div class="form-group text-center">
+                                <div class="col-sm-12">
+                                    <img src="" class="img-thumbnail">
+                                </div>
                             </div>
 
                             <div class="form-group">

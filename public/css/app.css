@@ -8,8 +8,21 @@
     font-size: 3rem;
 }
 
+.cell-left{
+    font-weight: bold;
+}
+
+.image-padding-top {
+    padding-top: 7px;
+}
+
 select {
     text-align-last: center;
+}
+
+#photo-text {
+    height: 250px;
+    line-height: 250px;
 }
 
 /*.all-navs {*/
