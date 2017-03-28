@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Http\Requests\BookCreateRequest;
 use App\Http\Requests\BookEditRequest;
 use Illuminate\Http\Request;
 
@@ -39,7 +40,7 @@ class BookController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(BookCreateRequest $request)
     {
         //
         $input = $request->all();
@@ -54,7 +55,7 @@ class BookController extends Controller
 
         Book::create($input);
 
-        return redirect('/home');
+        return redirect('/book');
 //        dd($input);
 
 
@@ -122,5 +123,36 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+        Book::findOrFail($id)->delete();
+
+        return redirect('/book');
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

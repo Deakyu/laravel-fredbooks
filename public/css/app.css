@@ -33,6 +33,10 @@ select {
     margin-bottom: 3%;
 }
 
+.strong {
+    font-weight: bold;
+}
+
 /*.all-navs {*/
     /*background-color: rgba(0,56,168,1);*/
 /*}*/
