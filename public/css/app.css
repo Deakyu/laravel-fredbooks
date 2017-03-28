@@ -1,5 +1,9 @@
 
 /*# sourceMappingURL=app.css.map */
+.full-width {
+    width:100%;
+}
+
 .jumbotron {
     margin-top: 10%;
 }
@@ -23,6 +27,10 @@ select {
 #photo-text {
     height: 250px;
     line-height: 250px;
+}
+
+.bottom-space {
+    margin-bottom: 3%;
 }
 
 /*.all-navs {*/

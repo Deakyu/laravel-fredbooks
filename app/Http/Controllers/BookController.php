@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Book;
+use App\Http\Requests\BookEditRequest;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -81,7 +82,12 @@ class BookController extends Controller
      */
     public function edit($id)
     {
-        //
+        $book = Book::findOrFail($id);
+        if(Auth::user()->id == $book->user->id) {
+            return view('book.edit', compact('book'));
+        } else {
+            return redirect('/book/' . $book->id);
+        }
     }
 
     /**
@@ -91,9 +97,20 @@ class BookController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BookEditRequest $request, $id)
     {
         //
+        $book = Book::findOrFail($id);
+
+        $input = $request->all();
+        if($file = $request->file('photo')) {
+            $name = time() . "_" . $file->getClientOriginalName();
+            $file->move('images', $name);
+            $input['photo'] = $name;
+        }
+        $book->update($input);
+
+        return redirect('/book');
     }
 
     /**
