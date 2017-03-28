@@ -19,4 +19,10 @@ Route::auth();
 
 Route::get('/home', 'HomeController@index');
 
-Route::resource('book', 'BookController');
+Route::group(['middleware'=>'book.auth'], function() {
+
+
+    Route::resource('book', 'BookController');
+
+
+});

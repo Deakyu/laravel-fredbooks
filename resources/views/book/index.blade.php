@@ -3,7 +3,38 @@
 
 @section('content')
 
+
+
     <div class="container">
+
+
+        @if(Session::has('deleted_book'))
+
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>{{session('deleted_book')}}</strong>
+            </div>
+
+        @endif
+
+        @if(Session::has('updated_book'))
+
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>{{session('updated_book')}}</strong>
+            </div>
+
+        @endif
+
+        @if(Session::has('created_book'))
+
+            <div class="alert alert-success alert-dismissible" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>{{session('created_book')}}</strong>
+            </div>
+
+        @endif
+
         <div class="panel panel-default">
             <div class="panel-heading text-center"><strong>Book Lists</strong></div>
 
@@ -28,6 +59,8 @@
                 @endif
             </div>
         </div>
+
+            <a href="{{route('book.create')}}" class="btn btn-info">Create Book</a>
     </div>
 
 

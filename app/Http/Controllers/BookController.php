@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class BookController extends Controller
 {
@@ -53,7 +54,9 @@ class BookController extends Controller
 
         }
 
-        Book::create($input);
+        $book = Book::create($input);
+
+        Session::flash('created_book', 'The Book ' . $book->title . ' is created!');
 
         return redirect('/book');
 //        dd($input);
@@ -111,6 +114,8 @@ class BookController extends Controller
         }
         $book->update($input);
 
+        Session::flash('updated_book', 'Updated the book!');
+
         return redirect('/book');
     }
 
@@ -123,7 +128,11 @@ class BookController extends Controller
     public function destroy($id)
     {
         //
+        $book = Book::findOrFail($id);
+        $title = $book->title;
         Book::findOrFail($id)->delete();
+
+        Session::flash('deleted_book', 'The Book ' . $title . ' is deleted!');
 
         return redirect('/book');
     }
