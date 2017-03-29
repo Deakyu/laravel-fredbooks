@@ -18,10 +18,24 @@ class BookController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+//    public function customAjax(Request $request) {
+//        $books = Book::paginate(4);
+//
+//        if($request->ajax()) {
+//            $view = view('data', compact('books'))->render();
+//            return response()->json(['html'=>$view]);
+//        }
+//        return view('book.index', compact('books'));
+//    }
+
+    public function index(Request $request)
     {
         //
-        $books = Book::all();
+        $books = Book::orderBy('created_at', 'desc')->paginate(4);
+        if($request->ajax()) {
+            $view = view('book.data', compact('books'))->render();
+            return response()->json(['html'=>$view]);
+        }
         return view('book.index', compact('books'));
     }
 
@@ -136,6 +150,8 @@ class BookController extends Controller
 
         return redirect('/book');
     }
+
+
 }
 
 

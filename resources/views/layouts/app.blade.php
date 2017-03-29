@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Fredbooks</title>
 
     <!-- Fonts -->
 
@@ -17,6 +17,11 @@
     <style>
         .fa-btn {
             margin-right: 6px;
+        }
+        .ajax-load {
+            background: #e1e1e1;
+            padding: 10px 0px;
+            width: 100%;
         }
     </style>
     <script src="https://use.fontawesome.com/ef1792dc46.js"></script>
@@ -71,7 +76,8 @@
     @yield('content')
 
     <!-- JavaScripts -->
-     <script src="{{asset('js/app.js')}}"></script>
     <script src="{{asset('js/libs.js')}}"></script>
+    <script src="{{asset('js/app.js')}}"></script>
+
 </body>
 </html>

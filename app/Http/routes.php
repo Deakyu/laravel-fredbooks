@@ -23,6 +23,7 @@ Route::group(['middleware'=>'book.auth'], function() {
 
 
     Route::resource('book', 'BookController');
+    Route::get('/testing', 'BookController@customAjax');
 
 
 });

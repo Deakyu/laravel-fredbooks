@@ -1,7 +1,18 @@
 
+body, html {
+    height: 100%;
+}
+
 /*# sourceMappingURL=app.css.map */
 .full-width {
     width:100%;
+}
+
+.half-width {
+    display: block;
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .jumbotron {
@@ -35,6 +46,14 @@ select {
 
 .strong {
     font-weight: bold;
+}
+
+#book-panel {
+    padding:1%;
+    height: 85%;
+    overflow:auto;
+    background-color: rgba(0, 100, 190, 0.2);
+    border-radius: 10px;
 }
 
 /*.all-navs {*/

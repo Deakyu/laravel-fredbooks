@@ -5,7 +5,7 @@
 
 
 
-    <div class="container">
+    <div class="container" id="book-panel">
 
 
         @if(Session::has('deleted_book'))
@@ -35,35 +35,22 @@
 
         @endif
 
-        <div class="panel panel-default">
-            <div class="panel-heading text-center"><strong>Book Lists</strong></div>
+        {{--<div class="panel panel-default">--}}
+            {{--<div class="panel-heading text-center"><strong>Book Lists</strong></div>--}}
 
-            <div class="panel-body">
+            {{--<div class="panel-body">--}}
                 @if($books != nullOrEmptyString())
-                    @foreach($books as $book)
-                        <div class="row bottom-space">
-                            <div class="col-sm-4">
-                                <img class="img-thumbnail" src="{{$book->photo}}">
-                            </div>
-
-                            <div class="list-group col-sm-8">
-                                <a class="list-group-item active" href="{{route('book.show', $book->id)}}">{{$book->title}}</a>
-                                <div class="list-group-item">{{$book->user->name}}</div>
-                                <div class="list-group-item">$ {{$book->desirable_price}}</div>
-                                <div class="list-group-item">{{$book->isbn}}</div>
-                                <div class="list-group-item">{{$book->status}}</div>
-                            </div>
-                        </div>
-
-                    @endforeach
+                    @include('book.data')
                 @endif
-            </div>
+            {{--</div>--}}
+        {{--</div>--}}
+        <div class="ajax-load text-center" style="display:none">
+            <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif" alt="">Load</p>
         </div>
-
-            <a href="{{route('book.create')}}" class="btn btn-info">Create Book</a>
     </div>
 
 
+    <a href="{{route('book.create')}}" class="btn btn-info">Create Book</a>
 
 
 
