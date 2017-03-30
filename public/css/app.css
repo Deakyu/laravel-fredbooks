@@ -4,6 +4,34 @@ body, html {
 }
 
 /*# sourceMappingURL=app.css.map */
+.img-thumbnail {
+    margin-left: 15%;
+    margin-right: 15%;
+
+
+    min-height: 205px;
+    height: 205px;
+
+    width: 70%;
+    min-width: 70%;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.one-fifth-height {
+    height: 20%;
+}
+
+.list-group {
+    margin-bottom: 0;
+}
+
+.equal-height{
+    display: flex;
+}
+
 .full-width {
     width:100%;
 }
@@ -52,8 +80,18 @@ select {
     padding:1%;
     height: 85%;
     overflow:auto;
-    background-color: rgba(0, 100, 190, 0.2);
+    background-color: rgb(255, 255, 255);
     border-radius: 10px;
+}
+
+.ajax-load {
+    background: rgba(255, 255, 255, 0.4);
+    padding: 10px 0px;
+    width: 100%;
+}
+
+::-webkit-scrollbar {
+    display: none;
 }
 
 /*.all-navs {*/

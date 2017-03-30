@@ -31,14 +31,16 @@ class BookController extends Controller
     public function index(Request $request)
     {
         //
-        $books = Book::orderBy('created_at', 'desc')->paginate(4);
+        $numPagin = 4;
+        $books = Book::orderBy('created_at', 'desc')->paginate($numPagin);
         $numBooks = count(Book::all());
+        $numTotalPage = $numBooks/$numPagin+1;
 
         if($request->ajax()) {
             $view = view('book.data', compact('books'))->render();
             return response()->json(['html'=>$view]);
         }
-        return view('book.index', compact('books', 'numBooks'));
+        return view('book.index', compact('books', 'numTotalPage'));
     }
 
     /**

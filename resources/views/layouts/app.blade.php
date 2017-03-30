@@ -18,11 +18,7 @@
         .fa-btn {
             margin-right: 6px;
         }
-        .ajax-load {
-            background: #e1e1e1;
-            padding: 10px 0px;
-            width: 100%;
-        }
+
     </style>
     <script src="https://use.fontawesome.com/ef1792dc46.js"></script>
 </head>

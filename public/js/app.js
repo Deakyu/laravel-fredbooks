@@ -20,21 +20,14 @@ function previewFile() {
 
 }
 
-var numBooks = $('#testnum').data('num-books');
-console.log(numBooks);
-var numPage = parseInt(numBooks/4)+1;
-
+var numTotalPage = parseInt($('#testnum').data('num-pages'));
 
 var page = 1;
 var bookPanel = $('#book-panel');
 
 bookPanel.on('scroll', function() {
-    // if($(window).scrollTop() + $(window).height() >= $(document).height()) {
-    //     page++;
-    //     loadMoreData(page);
-    // }
     if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 5) {
-        if(page  == numPage)
+        if(page  >= numTotalPage)
             return;
         page++;
         loadMoreData(page);

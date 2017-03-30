@@ -44,13 +44,13 @@
                 @endif
             {{--</div>--}}
         {{--</div>--}}
+            {{--<img style="display:none" src="http://demo.itsolutionstuff.com/plugin/loader.gif" alt="" class="ajax-load">--}}
+
         <div class="ajax-load text-center" style="display:none">
             <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif" alt="">Load</p>
         </div>
     </div>
-    <div class="panel" id="testnum" data-num-books="{{$numBooks}}" style="display:none">
-
-    </div>
+    <div id="testnum" data-num-pages="{{$numTotalPage}}" style="display:none"></div>
 
 
     <a href="{{route('book.create')}}" class="btn btn-info">Create Book</a>

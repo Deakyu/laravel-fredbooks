@@ -34,7 +34,7 @@
                             </tr>
                             <tr>
                                 <td class="active cell-left">Status</td>
-                                <td>{{$book->status}}</td>
+                                <td>{{$book->statusInWords()}}</td>
                             </tr>
                             <tr>
                                 <td class="active cell-left" id="photo-text">Photo</td>
@@ -48,6 +48,10 @@
                     </div>
 
                 </div>
+
+                @if(Auth::user()->id == $book->user->id)
+
+
                 <div class="row bottom-space">
                     <div class="col-sm-2">
 
@@ -64,6 +68,13 @@
 
                     </div>
                 </div>
+
+                @endif
+
+
+
+
+
             </div>
         </div>
     </div>
