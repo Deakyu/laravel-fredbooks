@@ -48,6 +48,9 @@
             <p><img src="http://demo.itsolutionstuff.com/plugin/loader.gif" alt="">Load</p>
         </div>
     </div>
+    <div class="panel" id="testnum" data-num-books="{{$numBooks}}" style="display:none">
+
+    </div>
 
 
     <a href="{{route('book.create')}}" class="btn btn-info">Create Book</a>

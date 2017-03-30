@@ -20,6 +20,9 @@ function previewFile() {
 
 }
 
+var numBooks = $('#testnum').data('num-books');
+console.log(numBooks);
+var numPage = parseInt(numBooks/4)+1;
 
 
 var page = 1;
@@ -31,6 +34,8 @@ bookPanel.on('scroll', function() {
     //     loadMoreData(page);
     // }
     if($(this).scrollTop() + $(this).innerHeight() >= $(this)[0].scrollHeight - 5) {
+        if(page  == numPage)
+            return;
         page++;
         loadMoreData(page);
     }
@@ -53,7 +58,7 @@ function loadMoreData(page) {
         }
     )
         .done(function(data) {
-            if(data.html == " ") {
+            if(data.html == "") {
                 $('.ajax-load').html("No more records found");
                 return;
             }

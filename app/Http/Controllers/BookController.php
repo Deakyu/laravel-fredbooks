@@ -32,11 +32,13 @@ class BookController extends Controller
     {
         //
         $books = Book::orderBy('created_at', 'desc')->paginate(4);
+        $numBooks = count(Book::all());
+
         if($request->ajax()) {
             $view = view('book.data', compact('books'))->render();
             return response()->json(['html'=>$view]);
         }
-        return view('book.index', compact('books'));
+        return view('book.index', compact('books', 'numBooks'));
     }
 
     /**
