@@ -50,7 +50,8 @@ class BookController extends Controller
      */
     public function create()
     {
-        return view('book.create');
+        $defaultPicPath = "/images/default-thumbnail.jpg";
+        return view('book.create', compact('defaultPicPath'));
     }
 
     /**
@@ -63,13 +64,16 @@ class BookController extends Controller
     {
         //
         $input = $request->all();
+        $defaultPic = 'default-thumbnail.jpg';
 
         if($file = $request->file('photo')) {
             $name = $file->getClientOriginalName();
             $file->move('images', $name);
             $input['photo'] = $name;
             $input['user_id'] = Auth::user()->id;
-
+        } else {
+            $input['user_id'] = Auth::user()->id;
+            $input['photo'] = $defaultPic;
         }
 
         $book = Book::create($input);

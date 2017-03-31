@@ -7,10 +7,10 @@
             <div class="panel panel-default">
                 <div class="panel-heading text-center" style="font-size:2.4rem;">Details</div>
                 <div class="panel-body row">
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
 
                     </div>
-                    <div class="col-sm-8">
+                    <div class="col-md-8">
                         <table class="table table-hover text-center">
                             <tr>
                                 <td class="active cell-left">Seller</td>
@@ -43,7 +43,7 @@
 
                         </table>
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
 
                     </div>
 
@@ -53,18 +53,18 @@
 
 
                 <div class="row bottom-space">
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
 
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         <a href="{{route('book.edit', $book->id)}}" class="btn btn-info full-width"><strong>EDIT</strong></a>
                     </div>
-                    <div class="col-sm-4">
+                    <div class="col-md-4">
                         {!! Form::open(['method'=>'DELETE', 'action'=>['BookController@destroy', $book->id]]) !!}
                                 {!! Form::submit('DELETE', ['class'=>'btn btn-danger full-width strong']) !!}
                         {!! Form::close() !!}
                     </div>
-                    <div class="col-sm-2">
+                    <div class="col-md-2">
 
                     </div>
                 </div>

@@ -29,7 +29,6 @@ class BookCreateRequest extends Request
             'isbn'=>'required',
             'desirable_price'=>'required',
             'status'=>'required',
-            'photo'=>'required'
         ];
     }
 }

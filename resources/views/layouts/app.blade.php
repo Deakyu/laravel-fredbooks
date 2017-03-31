@@ -23,7 +23,7 @@
     <script src="https://use.fontawesome.com/ef1792dc46.js"></script>
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top all-navs">
+    <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -43,9 +43,17 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
-                {{--<ul class="nav navbar-nav">--}}
-                    {{--<li><a href="{{ url('/home') }}">Home</a></li>--}}
-                {{--</ul>--}}
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ route('book.index') }}">Books</a></li>
+                </ul>
+
+                <form class="navbar-form navbar-left">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">Submit</button>
+                </form>
 
                 <!-- Right Side Of Navbar -->
                 <ul id="nav-right" class="nav navbar-nav navbar-right">

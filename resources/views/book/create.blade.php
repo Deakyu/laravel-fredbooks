@@ -52,7 +52,7 @@
 
                             <div class="form-group text-center">
                                 <div class="col-sm-12">
-                                    <img src="" class="img-thumbnail">
+                                    <img src="{{$defaultPicPath}}" class="img-thumbnail">
                                 </div>
                             </div>
 
