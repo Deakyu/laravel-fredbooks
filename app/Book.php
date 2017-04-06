@@ -16,7 +16,12 @@ class Book extends Model
         'author',
         'desirable_price',
         'status',
-        'photo'
+        'photo',
+        'subject',
+        'course',
+        'course_title',
+        'instructor',
+        'book_dependancy'
     ];
 
     public function user() {

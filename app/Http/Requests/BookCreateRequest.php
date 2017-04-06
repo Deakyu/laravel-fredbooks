@@ -29,6 +29,11 @@ class BookCreateRequest extends Request
             'isbn'=>'required',
             'desirable_price'=>'required',
             'status'=>'required',
+            'subject'=>'required',
+            'course'=>'required',
+            'course_title'=>'required',
+            'instructor'=>'required',
+            'book_dependancy'=>'required'
         ];
     }
 }

@@ -63,6 +63,7 @@ class BookController extends Controller
     public function store(BookCreateRequest $request)
     {
         //
+        $user = Auth::user();
         $input = $request->all();
         $defaultPic = 'default-thumbnail.jpg';
 
@@ -70,15 +71,13 @@ class BookController extends Controller
             $name = $file->getClientOriginalName();
             $file->move('images', $name);
             $input['photo'] = $name;
-            $input['user_id'] = Auth::user()->id;
         } else {
-            $input['user_id'] = Auth::user()->id;
             $input['photo'] = $defaultPic;
         }
 
-        $book = Book::create($input);
+        $user->books()->create($input);
 
-        Session::flash('created_book', 'The Book ' . $book->title . ' is created!');
+        Session::flash('created_book', 'The Book is created!');
 
         return redirect('/book');
 //        dd($input);
@@ -109,7 +108,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        if(Auth::user()->id == $book->user->id) {
+        if(Auth::user()->id == $book->users->id) {
             return view('book.edit', compact('book'));
         } else {
             return redirect('/book/' . $book->id);

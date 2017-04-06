@@ -13,6 +13,7 @@ class CreateBooksTable extends Migration
     public function up()
     {
         Schema::create('books', function (Blueprint $table) {
+            // user section
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('isbn')->nullable();
@@ -21,6 +22,13 @@ class CreateBooksTable extends Migration
             $table->float('desirable_price')->nullable();
             $table->integer('status')->unsigned();
             $table->string('photo')->nullable();
+
+            // course section
+            $table->string('subject');
+            $table->integer('course')->unsigned();
+            $table->string('course_title');
+            $table->string('instructor');
+            $table->string('book_dependancy');
             $table->timestamps();
         });
     }

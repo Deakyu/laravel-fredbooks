@@ -40,6 +40,22 @@
                                 <td class="active cell-left" id="photo-text">Photo</td>
                                 <td><img height="250" src="{{$book->photo}}"></td>
                             </tr>
+                            <tr>
+                                <td class="active cell-left">Course</td>
+                                <td>{{$book->subject}} {{$book->course}}</td>
+                            </tr>
+                            <tr>
+                                <td class="active cell-left">Course Title</td>
+                                <td>{{$book->course_title}}</td>
+                            </tr>
+                            <tr>
+                                <td class="active cell-left">Instructor</td>
+                                <td>{{$book->instructor}}</td>
+                            </tr>
+                            <tr>
+                                <td class="active cell-left">Book Dependency</td>
+                                <td>{{$book->book_dependancy}}</td>
+                            </tr>
 
                         </table>
                     </div>
