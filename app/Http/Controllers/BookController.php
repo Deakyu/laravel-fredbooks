@@ -43,6 +43,8 @@ class BookController extends Controller
         return view('book.index', compact('books', 'numTotalPage'));
     }
 
+
+
     /**
      * Show the form for creating a new resource.
      *
@@ -108,7 +110,7 @@ class BookController extends Controller
     public function edit($id)
     {
         $book = Book::findOrFail($id);
-        if(Auth::user()->id == $book->users->id) {
+        if(Auth::user()->id == $book->user->id) {
             return view('book.edit', compact('book'));
         } else {
             return redirect('/book/' . $book->id);
@@ -156,6 +158,28 @@ class BookController extends Controller
         Session::flash('deleted_book', 'The Book ' . $title . ' is deleted!');
 
         return redirect('/book');
+    }
+
+    public function search(Request $request)
+    {
+        $numPagin = 4;
+        $numSearched = count(Book::where($request->search_param, 'like', $request->search_text . '%')->get());
+        if($numSearched<4) {
+            $numPagin = $numSearched;
+        }
+        $books = Book::where($request->search_param, 'like', $request->search_text . '%')->paginate($numPagin);
+        $numBooks = count($books);
+        $numTotalPage = $numBooks/$numPagin+1;
+
+        if($request->ajax()) {
+            $view = view('book.data', compact('books'))->render();
+            return response()->json(['html'=>$view]);
+        }
+        return view('book.index', compact('books', 'numTotalPage'));
+
+
+//        $books = Book::where('search_param', 'like', $request->get('search_text') . '%')->get();
+//        return view('book.index', compact('books'));
     }
 
 

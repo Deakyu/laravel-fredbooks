@@ -30,6 +30,11 @@
                             </div>
 
                             <div class="form-group">
+                                {!! Form::label('edition', 'Edition:', ['class'=>'col-sm-4 control-label']) !!}
+                                <div class="col-sm-6">{!! Form::number('edition', null, ['class'=>'form-control', 'min'=>0]) !!}</div>
+                            </div>
+
+                            <div class="form-group">
                                 {!! Form::label('desirable_price', 'Desirable Price:', ['class'=>'col-sm-4 control-label']) !!}
                                 <div class="col-sm-6">{!! Form::text('desirable_price', null, ['class'=>'form-control', 'placeholder'=>'Do not put letters']) !!}</div>
                             </div>

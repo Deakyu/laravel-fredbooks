@@ -1,3 +1,7 @@
+@php
+    use App\Book;
+@endphp
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,6 +16,8 @@
     <!-- Styles -->
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
     <link href="{{asset('css/app.css') }}" rel="stylesheet">
+    <link  href="http://fonts.googleapis.com/css?family=Cabin:400,500,600,bold" rel="stylesheet" type="text/css" >
+    <link  href="http://fonts.googleapis.com/css?family=PT+Sans+Narrow:regular,bold" rel="stylesheet" type="text/css" >
 
     @yield('styles')
 
@@ -46,15 +52,40 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li><a href="{{ route('book.index') }}">Books</a></li>
+                    <li><a href="{{ route('book.index') }}">Books <span class="badge">{{count(Book::all())}}</span></a></li>
                 </ul>
 
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
+                {{--<form class="navbar-form navbar-left">--}}
+                    {{--<div class="form-group">--}}
+                        {{--<input type="text" class="form-control" placeholder="Search">--}}
+                    {{--</div>--}}
+                    {{--<button type="submit" class="btn btn-default">Search</button>--}}
+
+
+                {{--</form>--}}
+                {!! Form::open(['method'=>'POST', 'action'=>'BookController@search', 'class'=>'navbar-form navbar-left']) !!}
+
+                <div class="form-group">
+                    {!! Form::select('search_param', [
+                        'title'=>'Title',
+                        'isbn'=>'ISBN',
+                        'author'=>'Author',
+                        'subject'=>'Subject',
+                        'course'=>'Course',
+                        'course_title'=>'Course Title',
+                        'instructor'=>'Instructor',
+                    ], null, ['class'=>'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::text('search_text', null, ['class'=>'form-control', 'placeholder'=>'search']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::submit('Search', ['class'=>'btn btn-default']) !!}
+                </div>
+
+            {!! Form::close() !!}
 
                 <!-- Right Side Of Navbar -->
                 <ul id="nav-right" class="nav navbar-nav navbar-right">

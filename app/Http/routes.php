@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::group(['middleware'=>'book.auth'], function() {
 
 
+    Route::post('/search', 'BookController@search');
     Route::resource('book', 'BookController');
     Route::get('/testing', 'BookController@customAjax');
 

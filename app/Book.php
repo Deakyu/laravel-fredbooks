@@ -21,7 +21,8 @@ class Book extends Model
         'course',
         'course_title',
         'instructor',
-        'book_dependancy'
+        'book_dependancy',
+        'edition'
     ];
 
     public function user() {

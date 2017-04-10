@@ -53,7 +53,16 @@
     <div id="testnum" data-num-pages="{{$numTotalPage}}" style="display:none"></div>
 
 
-    <a href="{{route('book.create')}}" class="btn btn-info">Create Book</a>
+    {{--<a href="{{route('book.create')}}" class="btn btn-info">--}}
+    {{--<a href="{{route('book.create')}}" class="css-button">--}}
+        {{--<span>Post Your Book</span>--}}
+    {{--</a>--}}
+    {!! Form::open(['method'=>'GET', 'action'=>'BookController@create']) !!}
+        {{--{!! Form::button('Create Post', ['class'=>'css-button']) !!}--}}
+        <button class="css-button">
+            <span>Post Your Book!</span>
+        </button>
+    {!! Form::close() !!}
 
 
 

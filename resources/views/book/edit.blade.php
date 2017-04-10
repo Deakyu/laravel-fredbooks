@@ -32,6 +32,11 @@
                             </div>
 
                             <div class="form-group">
+                                {!! Form::label('edition', 'Edition:', ['class'=>'col-md-4 control-label']) !!}
+                                <div class="col-md-6">{!! Form::number('edition', null, ['class'=>'form-control', 'min'=>0]) !!}</div>
+                            </div>
+
+                            <div class="form-group">
                                 {!! Form::label('desirable_price', 'Desirable Price:', ['class'=>'col-md-4 control-label']) !!}
                                 <div class="col-md-6">{!! Form::text('desirable_price', $book->desirable_price, ['class'=>'form-control']) !!}</div>
                             </div>
