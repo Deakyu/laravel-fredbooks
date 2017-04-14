@@ -1,14 +1,14 @@
 /**
  * Created by Deakyu on 4/14/2017.
  */
-const { mix } = require('laravel-mix');
+const mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css');
 
 mix.styles([
     'resources/assets/css/libs/bootstrap.min.css',
-    'resources/assets/css/libs/app.css',
+    'resources/assets/css/libs/app.css'
 
 
 ], 'public/css/libs.css');

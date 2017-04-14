@@ -1,5 +1,5 @@
 
-@if(count($books)>0)
+{{--@if(count($books)>0)--}}
 
     @foreach($books as $book)
 
@@ -20,10 +20,10 @@
 
     @endforeach
 
-    @else
-        <div class="alert alert-danger">
-            No book found
-        </div>
+    {{--@else--}}
+        {{--<div class="alert alert-danger">--}}
+            {{--No book found--}}
+        {{--</div>--}}
 
 
-@endif
+{{--@endif--}}
