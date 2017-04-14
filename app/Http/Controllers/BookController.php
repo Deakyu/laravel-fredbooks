@@ -34,7 +34,7 @@ class BookController extends Controller
         $numPagin = 4;
         $books = Book::orderBy('created_at', 'desc')->paginate($numPagin);
         $numBooks = count(Book::all());
-        $numTotalPage = $numBooks/$numPagin+1;
+        $numTotalPage = $numBooks == 0 ? 0 : $numBooks/$numPagin+1;
 
         if($request->ajax()) {
             $view = view('book.data', compact('books'))->render();
@@ -169,7 +169,7 @@ class BookController extends Controller
         }
         $books = Book::where($request->search_param, 'like', $request->search_text . '%')->paginate($numPagin);
         $numBooks = count($books);
-        $numTotalPage = $numBooks/$numPagin+1;
+        $numTotalPage = $numBooks == 0 ? 0 : $numBooks/$numPagin+1;
 
         if($request->ajax()) {
             $view = view('book.data', compact('books'))->render();
