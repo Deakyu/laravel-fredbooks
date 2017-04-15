@@ -30,6 +30,7 @@
     <script src="https://use.fontawesome.com/ef1792dc46.js"></script>
 </head>
 <body id="app-layout">
+
     <nav class="navbar navbar-inverse navbar-static-top">
         <div class="container">
             <div class="navbar-header">
@@ -52,39 +53,43 @@
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
                     <li><a href="{{ route('book.index') }}">Books <span class="badge">{{count(Book::all())}}</span></a></li>
+                    <li>
+                        <div id="navbar-center">
+                            {!! Form::open(['method'=>'POST', 'action'=>'BookController@search', 'class'=>'navbar-form']) !!}
+
+
+                            <div class="input-group">
+                                <div class="input-group-btn">
+                                    {!! Form::select('search_param', [
+                                        'title'=>'Title',
+                                        'isbn'=>'ISBN',
+                                        'author'=>'Author',
+                                        'subject'=>'Subject',
+                                        'course'=>'Course',
+                                        'course_title'=>'Course Title',
+                                        'instructor'=>'Instructor',
+                                    ], null, ['class'=>'form-control', 'id'=>'search-param']) !!}
+                                </div>
+
+                                {!! Form::text('search_text', null, ['class'=>'form-control', 'placeholder'=>'search']) !!}
+                                <span class="input-group-btn" id="search-parent">
+                                    {!! Form::button('Search', ['class'=>'btn btn-default', 'type'=>'submit', 'id'=>'search-child']) !!}
+                                </span>
+                            </div>
+
+                            {{--<div class="form-group">--}}
+                                {{--{!! Form::submit('Search', ['class'=>'btn btn-default']) !!}--}}
+                            {{--</div>--}}
+
+                            {!! Form::close() !!}
+                        </div>
+                    </li>
                 </ul>
 
-                {{--<form class="navbar-form navbar-left">--}}
-                    {{--<div class="form-group">--}}
-                        {{--<input type="text" class="form-control" placeholder="Search">--}}
-                    {{--</div>--}}
-                    {{--<button type="submit" class="btn btn-default">Search</button>--}}
 
 
-                {{--</form>--}}
-                {!! Form::open(['method'=>'POST', 'action'=>'BookController@search', 'class'=>'navbar-form navbar-left']) !!}
 
-                <div class="form-group">
-                    {!! Form::select('search_param', [
-                        'title'=>'Title',
-                        'isbn'=>'ISBN',
-                        'author'=>'Author',
-                        'subject'=>'Subject',
-                        'course'=>'Course',
-                        'course_title'=>'Course Title',
-                        'instructor'=>'Instructor',
-                    ], null, ['class'=>'form-control']) !!}
-                </div>
 
-                <div class="form-group">
-                    {!! Form::text('search_text', null, ['class'=>'form-control', 'placeholder'=>'search']) !!}
-                </div>
-
-                <div class="form-group">
-                    {!! Form::submit('Search', ['class'=>'btn btn-default']) !!}
-                </div>
-
-            {!! Form::close() !!}
 
                 <!-- Right Side Of Navbar -->
                 <ul id="nav-right" class="nav navbar-nav navbar-right">
@@ -107,9 +112,13 @@
                         </li>
                     @endif
                 </ul>
+
+
             </div>
         </div>
     </nav>
+
+
 
     @yield('content')
 

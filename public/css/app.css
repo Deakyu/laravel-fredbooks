@@ -11,6 +11,10 @@ body {
 
 }
 
+
+
+
+
 /*# sourceMappingURL=app.css.map */
 .img-thumbnail {
     margin-left: 15%;
@@ -24,44 +28,18 @@ body {
     min-width: 70%;
 }
 
-.full-height {
-    height: 100%;
-}
-
-.one-fifth-height {
-    height: 20%;
-}
-
 .list-group {
     margin-bottom: 0;
 }
 
-.equal-height{
-    display: flex;
-}
 
-.full-width {
-    width:100%;
-}
-
-.half-width {
-    display: block;
-    width:30%;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .jumbotron {
     margin-top: 10%;
+    opacity:0.8;
 }
 
-.bigwords {
-    font-size: 3rem;
-}
 
-.cell-left{
-    font-weight: bold;
-}
 
 .image-padding-top {
     padding-top: 7px;
@@ -76,13 +54,7 @@ select {
     line-height: 250px;
 }
 
-.bottom-space {
-    margin-bottom: 3%;
-}
 
-.strong {
-    font-weight: bold;
-}
 
 #book-panel {
     padding:1%;
@@ -102,9 +74,95 @@ select {
     display: none;
 }
 
+
+/* Navbar Styles */
+
+#navbar-center {
+    text-align: center;
+}
+    /* Navbar Box */
+    nav.navbar.navbar-inverse.navbar-static-top {
+        background-color: white;
+        border-color: transparent;
+        color: black;
+    }
+
+    /* Navbar fonts */
+    .navbar-inverse .navbar-brand, .navbar-inverse .navbar-nav>li>a{
+        color: black;
+        font-size: 2rem;
+    }
+
+    .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav>li>a:hover {
+        color: black;
+    }
+
+    /* Search Bar */
+    #search-param {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Utilities */
 .hide {
     display: none;
 }
+
+.bottom-space {
+    margin-bottom: 3%;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.bigwords {
+    font-size: 3rem;
+}
+
+.cell-left{
+    font-weight: bold;
+}
+
+.equal-height{
+    display: flex;
+}
+
+.full-width {
+    width:100%;
+}
+
+.half-width {
+    display: block;
+    width:30%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.one-fifth-height {
+    height: 20%;
+}
+
+
+
+
+
 
 
 /* Create Book Button Styling */

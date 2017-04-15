@@ -62,3 +62,6 @@ function loadMoreData(page) {
             alert('server not responding');
         });
 }
+var parentHeight = $('#search-parent').height() + 'px';
+
+$('#search-child').css('height', parentHeight);
