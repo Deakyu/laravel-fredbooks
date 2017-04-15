@@ -31,5 +31,5 @@ Route::group(['middleware'=>'book.auth'], function() {
 
 });
 
-Route::get('auth/google', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/google', 'Auth\RegisterController@redirectToProvider')->name('google.login');
 Route::get('auth/google/callback', 'Auth\RegisterController@handleProviderCallback');

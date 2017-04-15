@@ -43,7 +43,7 @@
                 </button>
 
                 <!-- Branding Image -->
-                <a id="nav-brand" class="navbar-brand" href="{{ url('/home') }}">
+                <a id="nav-brand" class="navbar-brand" href="{{ route('book.index') }}">
                     <i class="fa fa-book" aria-hidden="true" style="margin-right: 5px;"></i>Fredbooks
                 </a>
             </div>
@@ -51,7 +51,6 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
                     <li><a href="{{ route('book.index') }}">Books <span class="badge">{{count(Book::all())}}</span></a></li>
                 </ul>
 
@@ -91,8 +90,11 @@
                 <ul id="nav-right" class="nav navbar-nav navbar-right">
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li>
+                            <a href="{{ route('google.login') }}">
+                                <i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i> Login
+                            </a>
+                        </li>
                     @else
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

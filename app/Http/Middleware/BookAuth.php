@@ -19,7 +19,7 @@ class BookAuth
         if(Auth::check()) {
             return $next($request);
         } else {
-            return redirect('/home');
+            return redirect('auth/google');
         }
 
 

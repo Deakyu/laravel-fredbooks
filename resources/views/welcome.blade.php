@@ -13,7 +13,7 @@
                 <p class="text-center">
                     Hope you enjoy!
                 </p>
-                <p class="text-center"><a class="btn btn-primary btn-lg" href="{{url('/login')}}" role="button">Get Started</a></p>
+                <p class="text-center"><a class="btn btn-primary btn-lg" href="{{route('book.index')}}" role="button">Get Started</a></p>
             </div>
         </div>
     </div>

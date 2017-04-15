@@ -3,6 +3,14 @@ body, html {
     height: 100%;
 }
 
+body {
+    background-image: url('http://s3.amazonaws.com/digitaltrends-uploads-prod/2015/08/Back-to-school-textbook-guide.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center center;
+
+}
+
 /*# sourceMappingURL=app.css.map */
 .img-thumbnail {
     margin-left: 15%;
@@ -80,7 +88,7 @@ select {
     padding:1%;
     height: 85%;
     overflow:auto;
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
 }
 
