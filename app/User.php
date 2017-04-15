@@ -28,5 +28,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Book');
     }
 
+    public function socialProviders() {
+        return $this->hasMany('App\SocialProvider');
+    }
+
 
 }
